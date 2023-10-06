@@ -9,8 +9,8 @@ using System.Collections.Generic;
 
 namespace Azure.Communication.CallAutomation
 {
-    /// <summary> Azure Open AI Dialog. </summary>
-    public partial class AzureOpenAIDialog : BaseDialog
+    /// <summary> The UnknownBaseDialog. </summary>
+    internal partial class UnknownDialog : BaseDialog
     {
     }
 }

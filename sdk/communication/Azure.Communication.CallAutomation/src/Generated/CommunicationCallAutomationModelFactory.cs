@@ -22,20 +22,6 @@ namespace Azure.Communication.CallAutomation
             return new TransferCallToParticipantResult(operationContext);
         }
 
-        /// <summary> Initializes a new instance of DialogStateResponse. </summary>
-        /// <param name="dialogId"> The dialog ID. </param>
-        /// <param name="dialog">
-        /// Defines dialog.
-        /// Please note <see cref="BaseDialog"/> is the base class. According to the scenario, a derived class of the base class might need to be assigned here, or this property needs to be casted to one of the possible derived classes.
-        /// The available derived classes include <see cref="AzureOpenAIDialog"/> and <see cref="PowerVirtualAgentsDialog"/>.
-        /// </param>
-        /// <param name="operationContext"> The value to identify context of the operation. </param>
-        /// <returns> A new <see cref="CallAutomation.DialogStateResponse"/> instance for mocking. </returns>
-        public static DialogStateResponse DialogStateResponse(string dialogId = null, BaseDialog dialog = null, string operationContext = null)
-        {
-            return new DialogStateResponse(dialogId, dialog, operationContext);
-        }
-
         /// <summary> Initializes a new instance of MuteParticipantsResult. </summary>
         /// <param name="operationContext"> The operation context provided by client. </param>
         /// <returns> A new <see cref="CallAutomation.MuteParticipantsResult"/> instance for mocking. </returns>
@@ -208,6 +194,14 @@ namespace Azure.Communication.CallAutomation
         public static RecognizeCanceled RecognizeCanceled(string callConnectionId = null, string serverCallId = null, string correlationId = null, string operationContext = null)
         {
             return new RecognizeCanceled(callConnectionId, serverCallId, correlationId, operationContext);
+        }
+
+        /// <summary> Initializes a new instance of UserConsent. </summary>
+        /// <param name="recording"></param>
+        /// <returns> A new <see cref="CallAutomation.UserConsent"/> instance for mocking. </returns>
+        public static UserConsent UserConsent(int? recording = null)
+        {
+            return new UserConsent(recording);
         }
 
         /// <summary> Initializes a new instance of ContinuousDtmfRecognitionToneFailed. </summary>

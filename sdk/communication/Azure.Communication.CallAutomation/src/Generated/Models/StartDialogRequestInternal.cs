@@ -5,40 +5,35 @@
 
 #nullable disable
 
+using System;
+using Azure.Core;
+
 namespace Azure.Communication.CallAutomation
 {
-    /// <summary> The DialogStateResponse. </summary>
-    public partial class DialogStateResponse
+    /// <summary> The StartDialogRequest. </summary>
+    internal partial class StartDialogRequestInternal
     {
-        /// <summary> Initializes a new instance of DialogStateResponse. </summary>
-        internal DialogStateResponse()
-        {
-        }
-
-        /// <summary> Initializes a new instance of DialogStateResponse. </summary>
-        /// <param name="dialogId"> The dialog ID. </param>
+        /// <summary> Initializes a new instance of StartDialogRequestInternal. </summary>
         /// <param name="dialog">
-        /// Defines dialog.
+        /// Defines the dialog.
         /// Please note <see cref="BaseDialog"/> is the base class. According to the scenario, a derived class of the base class might need to be assigned here, or this property needs to be casted to one of the possible derived classes.
         /// The available derived classes include <see cref="AzureOpenAIDialog"/> and <see cref="PowerVirtualAgentsDialog"/>.
         /// </param>
-        /// <param name="operationContext"> The value to identify context of the operation. </param>
-        internal DialogStateResponse(string dialogId, BaseDialog dialog, string operationContext)
+        /// <exception cref="ArgumentNullException"> <paramref name="dialog"/> is null. </exception>
+        public StartDialogRequestInternal(BaseDialog dialog)
         {
-            DialogId = dialogId;
+            Argument.AssertNotNull(dialog, nameof(dialog));
+
             Dialog = dialog;
-            OperationContext = operationContext;
         }
 
-        /// <summary> The dialog ID. </summary>
-        public string DialogId { get; }
         /// <summary>
-        /// Defines dialog.
+        /// Defines the dialog.
         /// Please note <see cref="BaseDialog"/> is the base class. According to the scenario, a derived class of the base class might need to be assigned here, or this property needs to be casted to one of the possible derived classes.
         /// The available derived classes include <see cref="AzureOpenAIDialog"/> and <see cref="PowerVirtualAgentsDialog"/>.
         /// </summary>
         public BaseDialog Dialog { get; }
         /// <summary> The value to identify context of the operation. </summary>
-        public string OperationContext { get; }
+        public string OperationContext { get; set; }
     }
 }

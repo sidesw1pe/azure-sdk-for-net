@@ -50,7 +50,7 @@ namespace Azure.Communication.CallAutomation
                     case "PowerVirtualAgentsDialog": return PowerVirtualAgentsDialog.DeserializePowerVirtualAgentsDialog(element);
                 }
             }
-            return UnknownBaseDialog.DeserializeUnknownBaseDialog(element);
+            return UnknownDialog.DeserializeUnknownDialog(element);
         }
     }
 }

@@ -11,7 +11,7 @@ using Azure.Core;
 
 namespace Azure.Communication.CallAutomation
 {
-    internal partial class UnknownBaseDialog : IUtf8JsonSerializable
+    internal partial class UnknownDialog : IUtf8JsonSerializable
     {
         void IUtf8JsonSerializable.Write(Utf8JsonWriter writer)
         {
@@ -37,7 +37,7 @@ namespace Azure.Communication.CallAutomation
             writer.WriteEndObject();
         }
 
-        internal static UnknownBaseDialog DeserializeUnknownBaseDialog(JsonElement element)
+        internal static UnknownDialog DeserializeUnknownDialog(JsonElement element)
         {
             if (element.ValueKind == JsonValueKind.Null)
             {
@@ -74,7 +74,7 @@ namespace Azure.Communication.CallAutomation
                     continue;
                 }
             }
-            return new UnknownBaseDialog(kind, Optional.ToDictionary(context));
+            return new UnknownDialog(kind, Optional.ToDictionary(context));
         }
     }
 }
