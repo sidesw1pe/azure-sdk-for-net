@@ -10,7 +10,7 @@ namespace Azure.Communication.CallAutomation
 {
     /// <summary> The PowerVirtualAgentsDialog. </summary>
     [CodeGenModel("PowerVirtualAgentsDialog")]
-    [CodeGenSuppress("PowerVirtualAgentsDialog", typeof(string))]
+    [CodeGenSuppress("PowerVirtualAgentsDialog", typeof(IDictionary<string, object>), typeof(string))]
     public partial class PowerVirtualAgentsDialog : BaseDialog
     {
         /// <summary> Initializes a new instance of PowerVirtualAgentsDialogInternal. </summary>
