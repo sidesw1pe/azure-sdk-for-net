@@ -12,7 +12,7 @@ using Azure.Core;
 namespace Azure.Communication.CallAutomation
 {
     /// <summary> The ComponentsF09IdvSchemasPowervirtualagentsdialogAllof1. </summary>
-    public partial class ComponentsF09IdvSchemasPowervirtualagentsdialogAllof1
+    internal partial class ComponentsF09IdvSchemasPowervirtualagentsdialogAllof1
     {
         /// <summary> Initializes a new instance of ComponentsF09IdvSchemasPowervirtualagentsdialogAllof1. </summary>
         /// <param name="botAppId"> Bot identifier. </param>

@@ -12,7 +12,7 @@ using Azure.Core;
 namespace Azure.Communication.CallAutomation
 {
     /// <summary> The Components1Y0Tfx8SchemasAzureopenaidialogAllof1. </summary>
-    public partial class Components1Y0Tfx8SchemasAzureopenaidialogAllof1
+    internal partial class Components1Y0Tfx8SchemasAzureopenaidialogAllof1
     {
         /// <summary> Initializes a new instance of Components1Y0Tfx8SchemasAzureopenaidialogAllof1. </summary>
         /// <param name="kind"> Determines the type of the dialog. </param>
