@@ -19,7 +19,7 @@ namespace Azure.Communication.CallAutomation
         /// <param name="language"> Language. </param>
         /// <exception cref="ArgumentNullException"> <paramref name="botAppId"/> is null. </exception>
         /// <exception cref="ArgumentNullException"> <paramref name="context"/> is null. </exception>
-        public PowerVirtualAgentsDialog(string botAppId, IDictionary<string, object> context, string language = null) : base(new DialogInputType("PowerVirtualAgentsDialog"))
+        public PowerVirtualAgentsDialog(string botAppId, IDictionary<string, object> context, string language = null) : base(DialogInputType.PowerVirtualAgents)
         {
             Argument.AssertNotNull(botAppId, nameof(botAppId));
             Argument.AssertNotNull(context, nameof(context));
@@ -34,7 +34,7 @@ namespace Azure.Communication.CallAutomation
         /// <param name="context"> Dialog context. </param>
         /// <param name="botAppId"> Bot identifier. </param>
         /// <param name="language"> Language. </param>
-        internal PowerVirtualAgentsDialog(DialogInputType kind, IDictionary<string, object> context, string botAppId, string language) : base(new DialogInputType("PowerVirtualAgentsDialog"), context)
+        internal PowerVirtualAgentsDialog(DialogInputType kind, IDictionary<string, object> context, string botAppId, string language) : base(DialogInputType.PowerVirtualAgents, context)
         {
             BotAppId = botAppId;
             Language = language;
